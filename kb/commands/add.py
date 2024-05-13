@@ -56,8 +56,8 @@ def add(args: Dict[str, str], config: Dict[str, str]):
                 continue
             add_file_to_kb(conn, args, config, fname)
     else:
-        # Get title for the new artifact
-        title = args["title"]
+        # Get title for the new artifact (replace spaces)
+        title = args["title"].replace(" ", "_")
 
         # Assign a "default" category if not provided
         category = args["category"] or "default"
