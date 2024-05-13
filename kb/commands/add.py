@@ -126,7 +126,7 @@ def add_file_to_kb(
                     PATH_KB_DATA, the path to where artifact are stored
     fname       -   the path of the file to add to kb
     """
-    title = args["title"] or fs.get_basename(fname)
+    title = args["title"].replace(" ", "_") or fs.get_basename(fname)
     category = args["category"] or "default"
     template = args["template"] or "default"
 
